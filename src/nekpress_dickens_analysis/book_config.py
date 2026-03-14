@@ -14,16 +14,32 @@ class ReposConfig:
 
 
 @dataclass(frozen=True)
+class AnalysisTargets:
+    chapter_manifest: str
+    target_volume_count_min: int
+    target_volume_count_max: int
+
+
+@dataclass(frozen=True)
 class BookConfig:
     root: Path
     work_id: str
     canonical_filename: str
     canonical_heading_markers: List[str]
     repos: ReposConfig
+    analysis: AnalysisTargets
 
     @property
     def canonical_path(self) -> Path:
         return self.root / "data" / "canonical" / self.canonical_filename
+
+    @property
+    def chapters_manifest_path(self) -> Path:
+        return self.root / self.analysis.chapter_manifest
+
+    @property
+    def ingest_volume_plan_draft_path(self) -> Path:
+        return self.root / "data" / "canonical" / "volume_plan_draft.json"
 
 
 def _repo_root() -> Path:
@@ -52,6 +68,12 @@ def load_book_config(path: Optional[str] = None) -> BookConfig:
             raise ValueError(f"data/book.json: '{key}' must be a list of non-empty strings")
         return [x.strip() for x in v]
 
+    def req_int(obj: dict[str, Any], key: str) -> int:
+        v = obj.get(key)
+        if not isinstance(v, int):
+            raise ValueError(f"data/book.json: '{key}' must be an int")
+        return v
+
     repos_raw = raw.get("repos", {})
     if not isinstance(repos_raw, dict):
         raise ValueError("data/book.json: 'repos' must be an object")
@@ -62,10 +84,21 @@ def load_book_config(path: Optional[str] = None) -> BookConfig:
         apparatus_public=repos_raw.get("apparatus_public") if isinstance(repos_raw.get("apparatus_public"), str) else None,
     )
 
+    analysis_raw = raw.get("analysis", {})
+    if not isinstance(analysis_raw, dict):
+        raise ValueError("data/book.json: 'analysis' must be an object")
+
+    analysis = AnalysisTargets(
+        chapter_manifest=req_str(analysis_raw, "chapter_manifest"),
+        target_volume_count_min=req_int(analysis_raw, "target_volume_count_min"),
+        target_volume_count_max=req_int(analysis_raw, "target_volume_count_max"),
+    )
+
     return BookConfig(
         root=root,
         work_id=req_str(raw, "work_id"),
         canonical_filename=req_str(raw, "canonical_filename"),
         canonical_heading_markers=req_list_str(raw, "canonical_heading_markers"),
         repos=repos,
+        analysis=analysis,
     )

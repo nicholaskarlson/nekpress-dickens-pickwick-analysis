@@ -8,6 +8,8 @@ from pathlib import Path
 FILES = [
     "window_metrics.csv",
     "keyness_last_vs_first.csv",
+    "chapter_lengths.csv",
+    "volume_plan_candidates.json",
 ]
 
 
@@ -21,7 +23,7 @@ def sha256_file(p: Path) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--results-dir", default="analysis/results", help="Directory containing CSV outputs")
+    ap.add_argument("--results-dir", default="analysis/results", help="Directory containing analysis outputs")
     ap.add_argument("--out", default="analysis/results/analysis.sha256", help="Output sha256 manifest path")
     args = ap.parse_args()
 

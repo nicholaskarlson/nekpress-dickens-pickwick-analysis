@@ -10,7 +10,7 @@ from pathlib import Path
 
 from nekpress_dickens_analysis.book_config import load_book_config
 
-ASSETS = ["canonical.txt", "canonical.sha256", "provenance.json"]
+ASSETS = ["canonical.txt", "canonical.sha256", "provenance.json", "chapters.json", "volume_plan_draft.json"]
 
 
 def run(cmd: list[str]) -> None:
@@ -62,6 +62,8 @@ def main() -> int:
         canon = td_path / "canonical.txt"
         sha_file = td_path / "canonical.sha256"
         prov = td_path / "provenance.json"
+        chapters = td_path / "chapters.json"
+        volume_plan = td_path / "volume_plan_draft.json"
 
         expected_sha, expected_name = parse_sha256_file(sha_file)
         if expected_name != "canonical.txt":
@@ -69,20 +71,33 @@ def main() -> int:
 
         actual_sha = sha256_file(canon)
         if actual_sha != expected_sha:
-            raise RuntimeError(f"SHA256 mismatch: expected {expected_sha}, got {actual_sha}")
+            raise RuntimeError(f"SHA mismatch for canonical.txt: expected {expected_sha}, got {actual_sha}")
 
-        shutil.copyfile(canon, out_dir / args.out_name)
-        shutil.copyfile(prov, out_dir / "provenance.json")
+        dest_canon = out_dir / args.out_name
+        shutil.copy2(canon, dest_canon)
+        shutil.copy2(chapters, out_dir / "chapters.json")
+        shutil.copy2(volume_plan, out_dir / "volume_plan_draft.json")
 
-        meta = {
-            "pinned_from": {"repo": args.repo, "tag": args.tag},
+        meta = json.loads(prov.read_text(encoding="utf-8"))
+        pin = {
+            "kind": "canonical",
+            "source": {
+                "repo": args.repo,
+                "tag": args.tag,
+            },
+            "path": f"data/canonical/{args.out_name}",
+            "sha256": actual_sha,
             "work": args.work,
-            "canonical_sha256": actual_sha,
-            "canonical_filename": args.out_name,
+            "provenance": meta,
+            "supporting_files": {
+                "chapters_manifest": "data/canonical/chapters.json",
+                "ingest_volume_plan_draft": "data/canonical/volume_plan_draft.json",
+            },
         }
-        (out_dir / "pin.json").write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
+        (out_dir / "pin.json").write_text(json.dumps(pin, indent=2) + "\n", encoding="utf-8")
+        shutil.copy2(prov, out_dir / "provenance.json")
 
-    print(f"✅ pinned canonical to {out_dir}")
+    print(f"✅ pinned canonical + chapter assets to {out_dir}")
     return 0
 
 
