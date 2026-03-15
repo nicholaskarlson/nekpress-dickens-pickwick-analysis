@@ -1,0 +1,406 @@
+{
+  "work_id": "pickwick_papers",
+  "canonical_sha256": "35ab16315d46583917b6c4d4c161d525083194574c89a4814ff3aab03a521ca8",
+  "chapter_count": 57,
+  "planning_basis": {
+    "target_story_pages_per_volume": 60,
+    "assumed_words_per_story_page": 300,
+    "target_words_per_volume": 18000
+  },
+  "total_word_count": 303203,
+  "volume_count": 17,
+  "volumes": [
+    {
+      "volume_id": "vol01",
+      "volume_number": 1,
+      "start_chapter_index": 1,
+      "end_chapter_index": 3,
+      "chapter_ids": [
+        "ch01",
+        "ch02",
+        "ch03"
+      ],
+      "chapter_numerals": [
+        "I",
+        "II",
+        "III"
+      ],
+      "chapter_filenames": [
+        "chapters/01.txt",
+        "chapters/02.txt",
+        "chapters/03.txt"
+      ],
+      "total_word_count": 16597
+    },
+    {
+      "volume_id": "vol02",
+      "volume_number": 2,
+      "start_chapter_index": 4,
+      "end_chapter_index": 7,
+      "chapter_ids": [
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07"
+      ],
+      "chapter_numerals": [
+        "IV",
+        "V",
+        "VI",
+        "VII"
+      ],
+      "chapter_filenames": [
+        "chapters/04.txt",
+        "chapters/05.txt",
+        "chapters/06.txt",
+        "chapters/07.txt"
+      ],
+      "total_word_count": 19831
+    },
+    {
+      "volume_id": "vol03",
+      "volume_number": 3,
+      "start_chapter_index": 8,
+      "end_chapter_index": 11,
+      "chapter_ids": [
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch11"
+      ],
+      "chapter_numerals": [
+        "VIII",
+        "IX",
+        "X",
+        "XI"
+      ],
+      "chapter_filenames": [
+        "chapters/08.txt",
+        "chapters/09.txt",
+        "chapters/10.txt",
+        "chapters/11.txt"
+      ],
+      "total_word_count": 20884
+    },
+    {
+      "volume_id": "vol04",
+      "volume_number": 4,
+      "start_chapter_index": 12,
+      "end_chapter_index": 14,
+      "chapter_ids": [
+        "ch12",
+        "ch13",
+        "ch14"
+      ],
+      "chapter_numerals": [
+        "XII",
+        "XIII",
+        "XIV"
+      ],
+      "chapter_filenames": [
+        "chapters/12.txt",
+        "chapters/13.txt",
+        "chapters/14.txt"
+      ],
+      "total_word_count": 16085
+    },
+    {
+      "volume_id": "vol05",
+      "volume_number": 5,
+      "start_chapter_index": 15,
+      "end_chapter_index": 18,
+      "chapter_ids": [
+        "ch15",
+        "ch16",
+        "ch17",
+        "ch18"
+      ],
+      "chapter_numerals": [
+        "XV",
+        "XVI",
+        "XVII",
+        "XVIII"
+      ],
+      "chapter_filenames": [
+        "chapters/15.txt",
+        "chapters/16.txt",
+        "chapters/17.txt",
+        "chapters/18.txt"
+      ],
+      "total_word_count": 19728
+    },
+    {
+      "volume_id": "vol06",
+      "volume_number": 6,
+      "start_chapter_index": 19,
+      "end_chapter_index": 21,
+      "chapter_ids": [
+        "ch19",
+        "ch20",
+        "ch21"
+      ],
+      "chapter_numerals": [
+        "XIX",
+        "XX",
+        "XXI"
+      ],
+      "chapter_filenames": [
+        "chapters/19.txt",
+        "chapters/20.txt",
+        "chapters/21.txt"
+      ],
+      "total_word_count": 18933
+    },
+    {
+      "volume_id": "vol07",
+      "volume_number": 7,
+      "start_chapter_index": 22,
+      "end_chapter_index": 24,
+      "chapter_ids": [
+        "ch22",
+        "ch23",
+        "ch24"
+      ],
+      "chapter_numerals": [
+        "XXII",
+        "XXIII",
+        "XXIV"
+      ],
+      "chapter_filenames": [
+        "chapters/22.txt",
+        "chapters/23.txt",
+        "chapters/24.txt"
+      ],
+      "total_word_count": 15161
+    },
+    {
+      "volume_id": "vol08",
+      "volume_number": 8,
+      "start_chapter_index": 25,
+      "end_chapter_index": 28,
+      "chapter_ids": [
+        "ch25",
+        "ch26",
+        "ch27",
+        "ch28"
+      ],
+      "chapter_numerals": [
+        "XXV",
+        "XXVI",
+        "XXVII",
+        "XXVIII"
+      ],
+      "chapter_filenames": [
+        "chapters/25.txt",
+        "chapters/26.txt",
+        "chapters/27.txt",
+        "chapters/28.txt"
+      ],
+      "total_word_count": 22027
+    },
+    {
+      "volume_id": "vol09",
+      "volume_number": 9,
+      "start_chapter_index": 29,
+      "end_chapter_index": 32,
+      "chapter_ids": [
+        "ch29",
+        "ch30",
+        "ch31",
+        "ch32"
+      ],
+      "chapter_numerals": [
+        "XXIX",
+        "XXX",
+        "XXXI",
+        "XXXII"
+      ],
+      "chapter_filenames": [
+        "chapters/29.txt",
+        "chapters/30.txt",
+        "chapters/31.txt",
+        "chapters/32.txt"
+      ],
+      "total_word_count": 19921
+    },
+    {
+      "volume_id": "vol10",
+      "volume_number": 10,
+      "start_chapter_index": 33,
+      "end_chapter_index": 34,
+      "chapter_ids": [
+        "ch33",
+        "ch34"
+      ],
+      "chapter_numerals": [
+        "XXXIII",
+        "XXXIV"
+      ],
+      "chapter_filenames": [
+        "chapters/33.txt",
+        "chapters/34.txt"
+      ],
+      "total_word_count": 15721
+    },
+    {
+      "volume_id": "vol11",
+      "volume_number": 11,
+      "start_chapter_index": 35,
+      "end_chapter_index": 37,
+      "chapter_ids": [
+        "ch35",
+        "ch36",
+        "ch37"
+      ],
+      "chapter_numerals": [
+        "XXXV",
+        "XXXVI",
+        "XXXVII"
+      ],
+      "chapter_filenames": [
+        "chapters/35.txt",
+        "chapters/36.txt",
+        "chapters/37.txt"
+      ],
+      "total_word_count": 15552
+    },
+    {
+      "volume_id": "vol12",
+      "volume_number": 12,
+      "start_chapter_index": 38,
+      "end_chapter_index": 40,
+      "chapter_ids": [
+        "ch38",
+        "ch39",
+        "ch40"
+      ],
+      "chapter_numerals": [
+        "XXXVIII",
+        "XXXIX",
+        "XL"
+      ],
+      "chapter_filenames": [
+        "chapters/38.txt",
+        "chapters/39.txt",
+        "chapters/40.txt"
+      ],
+      "total_word_count": 16245
+    },
+    {
+      "volume_id": "vol13",
+      "volume_number": 13,
+      "start_chapter_index": 41,
+      "end_chapter_index": 43,
+      "chapter_ids": [
+        "ch41",
+        "ch42",
+        "ch43"
+      ],
+      "chapter_numerals": [
+        "XLI",
+        "XLII",
+        "XLIII"
+      ],
+      "chapter_filenames": [
+        "chapters/41.txt",
+        "chapters/42.txt",
+        "chapters/43.txt"
+      ],
+      "total_word_count": 15783
+    },
+    {
+      "volume_id": "vol14",
+      "volume_number": 14,
+      "start_chapter_index": 44,
+      "end_chapter_index": 47,
+      "chapter_ids": [
+        "ch44",
+        "ch45",
+        "ch46",
+        "ch47"
+      ],
+      "chapter_numerals": [
+        "XLIV",
+        "XLV",
+        "XLVI",
+        "XLVII"
+      ],
+      "chapter_filenames": [
+        "chapters/44.txt",
+        "chapters/45.txt",
+        "chapters/46.txt",
+        "chapters/47.txt"
+      ],
+      "total_word_count": 20082
+    },
+    {
+      "volume_id": "vol15",
+      "volume_number": 15,
+      "start_chapter_index": 48,
+      "end_chapter_index": 50,
+      "chapter_ids": [
+        "ch48",
+        "ch49",
+        "ch50"
+      ],
+      "chapter_numerals": [
+        "XLVIII",
+        "XLIX",
+        "L"
+      ],
+      "chapter_filenames": [
+        "chapters/48.txt",
+        "chapters/49.txt",
+        "chapters/50.txt"
+      ],
+      "total_word_count": 18018
+    },
+    {
+      "volume_id": "vol16",
+      "volume_number": 16,
+      "start_chapter_index": 51,
+      "end_chapter_index": 54,
+      "chapter_ids": [
+        "ch51",
+        "ch52",
+        "ch53",
+        "ch54"
+      ],
+      "chapter_numerals": [
+        "LI",
+        "LII",
+        "LIII",
+        "LIV"
+      ],
+      "chapter_filenames": [
+        "chapters/51.txt",
+        "chapters/52.txt",
+        "chapters/53.txt",
+        "chapters/54.txt"
+      ],
+      "total_word_count": 20586
+    },
+    {
+      "volume_id": "vol17",
+      "volume_number": 17,
+      "start_chapter_index": 55,
+      "end_chapter_index": 57,
+      "chapter_ids": [
+        "ch55",
+        "ch56",
+        "ch57"
+      ],
+      "chapter_numerals": [
+        "LV",
+        "LVI",
+        "LVII"
+      ],
+      "chapter_filenames": [
+        "chapters/55.txt",
+        "chapters/56.txt",
+        "chapters/57.txt"
+      ],
+      "total_word_count": 12049
+    }
+  ]
+}

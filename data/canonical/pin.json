@@ -1,0 +1,32 @@
+{
+  "kind": "canonical",
+  "source": {
+    "repo": "nicholaskarlson/nekpress-dickens-pickwick-ingest",
+    "tag": "v0.3.0"
+  },
+  "path": "data/canonical/pickwick_papers.txt",
+  "sha256": "35ab16315d46583917b6c4d4c161d525083194574c89a4814ff3aab03a521ca8",
+  "work": "pickwick_papers",
+  "provenance": {
+    "work_id": "pickwick_papers",
+    "built_utc": "2026-03-14T19:59:58.242701+00:00",
+    "inputs": {
+      "source_kind": "gutenberg",
+      "ebook_id": 580,
+      "url": "https://www.gutenberg.org/cache/epub/580/pg580.txt",
+      "raw_sha256": "702fab921002864a3aa7bbf434174f81a9158b957ed7989784dd9a9a50449fa8"
+    },
+    "outputs": {
+      "canonical_sha256": "35ab16315d46583917b6c4d4c161d525083194574c89a4814ff3aab03a521ca8",
+      "chapter_count": 57,
+      "chapters_manifest": "chapters.json",
+      "volume_plan_draft": "volume_plan_draft.json",
+      "volume_count": 17
+    },
+    "notes": "Canonical output is cleaned and contains no Gutenberg boilerplate markers."
+  },
+  "supporting_files": {
+    "chapters_manifest": "data/canonical/chapters.json",
+    "ingest_volume_plan_draft": "data/canonical/volume_plan_draft.json"
+  }
+}
